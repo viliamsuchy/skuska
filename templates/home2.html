@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Workers</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+        p {
+            color: #00a36f;
+            text-decoration: none;
+            margin: 2px;
+        }
+        .title {
+            color: #1600a3;
+            margin: 5px;
+        }
+    </style>
+
+<head>
+    <title>Home</title>
+</head>
+<nav>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('create') }}">Add new worker</a>
+    <a href="{{ url_for('edit') }}">Edit</a>
+    <a href="{{ url_for('summary') }}">Summary</a>
+</nav>
+
+<h1 class="title">Welcome Here</h1>
+
+<body>
+    {{data}}
+    <hr>
+    <h2 class="title">GO TO SUMMARY</h2>
+</body>
+</html>
