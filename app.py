@@ -73,3 +73,5 @@ def edit():
 #    except ValueError:
 #        PORT = 5555
 #    app.run(HOST, PORT)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
