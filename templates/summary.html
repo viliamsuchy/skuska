@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Summary</title>
+
+<head>
+    <title>Home</title>
+    <link href="//db.onlinewebfonts.com/c/0f59a1765c4fc96684b92e78461e975b?family=SNOWFLAKE" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/4f6d8baa159eaeae6c3ef96aae68a9d9?family=Snowfall" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/31e817348bfbc82ebf2d5f0a9c2de8f5?family=firstsnow" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="design.css" media="screen">
+</head>
+
+<body>
+<nav class="topnav">
+    <a class="active" href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('create') }}">Add new Skier</a>
+    <a href="{{ url_for('edit') }}">Edit</a>
+    <a href="{{ url_for('summary') }}">Summary</a>
+</nav>
+<div class="hamburgerContainer">
+    <nav class="smallNav" id="smallNav">
+        <a class="active" href="{{ url_for('home') }}">Home</a>
+        <div id="hamburger">
+            <a href="{{ url_for('create') }}">Add new Skier</a><hr>
+            <a href="{{ url_for('edit') }}">Edit</a><hr>
+            <a href="{{ url_for('summary') }}">Summary</a>
+        </div>
+        <a class="icon" onclick="myFunction2()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+</div>
+    <header>
+        <h1 class="title">Welcome Here</h1>
+        <p>Here you may see the present summary of the existing Skiers:</p>
+    </header>
+    <main>
+        {{data}}
+        <hr>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>SALARY</th>
+            </tr>
+            <hr>
+
+            {% for worker in data%}
+            <tr>
+                <td>{{ worker[0] }}</td>
+                <td>{{ worker[1] }}</td>
+                <td>{{ worker[2] }}€</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </main>
+
+   <!-- {% for worker in data%}
+        <p class="work">ID: {{ worker[0] }}  NAME:  {{ worker[1] }}  SALARY: {{ worker[2] }}€</p>
+    {% endfor %}-->
+</body>
+</html>
+
+
+<script>
+    function myFunction2() {
+        var x = document.getElementById("hamburger");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    function myFunction3() {
+        var x = document.getElementById("hamburger");
+        x.style.display = "none";
+    }
+</script>
